@@ -1,162 +1,251 @@
 <html>
 <head>
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-
-<style>
-body {
-    background-color: #fce4e0;
-    font-family: Arial, sans-serif;
-}
-
-.header {
-    background-color: #fce4e0;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header img {
-    height: 50px;
-}
-
-.header a {
-    color: #f77e53;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.header .user-icon {
-    font-size: 24px;
-    color: #f77e53;
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-}
-
-.description,
-.confirmation {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-}
-
-.description {
-    width: 30%;
-}
-
-.description img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.confirmation {
-    width: 60%;
-}
-
-.confirmation h3 {
-    color: #f77e53;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-control {
-    margin-bottom: 10px;
-}
-
-.btn-continue {
-    background-color: #f77e53;
-    color: white;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.btn-continue:hover {
-    background-color: #f55a2c;
-}
-</style>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
-<div class="container">
-    <a class="navbar-brand" href="inicio.php">
-        <img alt="Dine Ease Logo" height="50" src="/DineEase/img/Dine_ease_logo-removebg-preview.png" width="100" />
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+    <a class="navbar-brand" href="inicio.html">
+        <img alt="Dine Ease Logo" src="img/Dine_ease_logo-removebg-preview.png" />
     </a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="anuncios.php">Anuncios</a>
+                <a class="nav-link" href="anuncios.html">Anuncios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reservaEnCurso.php">Reservas</a>
+                <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="perfil.php">
-                    <i class="fas fa-user"></i>
-                </a>
+                <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
             </li>
         </ul>
     </div>
-</div>
-<div class="content">
-    <div class="description">
-        <img alt="Image of a meal" height="200"
-            src=""
-            width="300" />
-        <h4>
-            DESCRIPCION
-        </h4>
     </div>
-    <div class="confirmation">
-        <h3>
-            Confirmación
-        </h3>
-        <div class="row">
+    </nav>
+  <div class="content">
+      <div class="description">
+          <img alt="Image of a meal" height="200"
+              src=""
+              width="300" />
+          <h4>
+              DESCRIPCION
+          </h4>
+      </div>
+      <div class="confirmation">
+          <h3>
+              Confirmación
+          </h3>
+          <div class="row">
             <div class="col-md-6">
-                <input class="form-control" placeholder="Nombres" type="text"  />
+                <input id="Nombres" class="form-control" placeholder="Nombres" type="text"  />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Apellidos" type="text" />
+              <input id="apellidos" class="form-control" placeholder="Apellidos" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Cédula" type="text"  />
+                <input id="cedula" class="form-control" placeholder="Cédula" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Celular" type="text"  />
+                <input id="celular" class="form-control" placeholder="Celular" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Carnet" type="text"  />
+                <input id="carnet" class="form-control" placeholder="Carnet" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Correo" type="text"/>
+                <input id="correo" class="form-control" placeholder="Correo" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Cantidad" type="text"  />
+                <input id="cantidad" class="form-control" placeholder="Cantidad" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Valor a pagar" type="text"  />
+                <input id="valor" class="form-control" placeholder="Valor a pagar" type="text" />
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Medio de pago" type="text"  />
+                <input id="medio" class="form-control" placeholder="Medio de pago" type="text" />
             </div>
-        </div>
-        <button class="btn-continue">
-            Continuar ➔
-        </button>
-    </div>
-</div>
+          </div>
+          <button class="btn-continue" onclick="guardarDatos()">
+              Continuar ➔
+          </button>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
+<script>
+function guardarDatos() {
+  const Nombres = document.getElementById('Nombres').value;
+  const apellidos = document.getElementById('apellidos').value;
+  const cedula = document.getElementById('cedula').value;
+  const celular = document.getElementById('celular').value;
+  const carnet = document.getElementById('carnet').value;
+  const correo = document.getElementById('correo').value;
+  const cantidad = document.getElementById('cantidad').value;
+  const valor = document.getElementById('valor').value;
+  const medio = document.getElementById('medio').value;
+
+  if (!Nombres || !apellidos || !cedula || !celular || !carnet || !correo || !cantidad || !valor || !medio) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Campos Vacíos',
+      text: 'Por favor, complete todos los campos antes de enviar el formulario.',
+      confirmButtonText: 'Aceptar'
+    });
+    return;
+  }
+
+  const pedido = {
+      Nombres,
+      apellidos,
+      cedula,
+      celular,
+      carnet,
+      correo,
+      cantidad,
+      valor,
+      medio
+  };
+
+  let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+  pedidos.push(pedido);
+  localStorage.setItem('pedidos', JSON.stringify(pedidos));
+  // hola
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Pedido Guardado',
+    text: 'Los datos se han guardado correctamente.',
+    confirmButtonText: 'Aceptar'
+  }).then(() => {
+    window.location.href = 'pedido.html';
+  });
+}
+</script>
+
+</script>
+
+<style>
+  body {
+      background-color: #f9f9f9;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #f8e8e8;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1800px;
+    }
+
+    .navbar-brand img {
+      height: 90px;
+      width: auto;
+      margin-right: 100px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #d97b6c;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+    color: #f77e53;
+    background-color: #f8e8e8;
+    box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
+    border-radius: 10px;
+  }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      padding-top: 200px;
+      gap: 20px;
+    }
+
+    .description,
+    .confirmation {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .description {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .description img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .confirmation h3 {
+      color: #f77e53;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+      border-color: #f77e53;
+      box-shadow: 0 0 5px rgba(247, 126, 83, 0.3);
+    }
+
+    .btn-continue {
+      background-color: #f77e53;
+      color: white;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-continue:hover {
+      background-color: #f55a2c;
+    }
+
+    @media (max-width: 768px) {
+      .description,
+      .confirmation {
+        width: 100%;
+      }
+    }
+</style>
 
 </html>
