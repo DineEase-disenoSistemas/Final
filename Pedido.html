@@ -1,121 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-            font-size: 0.9em;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        thead {
-            background-color: #009879;
-            color: #ffffff;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f3f3f3;
-        }
-
-        tbody tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        th {
-            background-color: #009879;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        td {
-            border-bottom: 1px solid #dddddd;
-        }
-
-        .btn-volver {
-            display: block;
-            width: 100px;
-            margin: 20px auto;
-            padding: 10px;
-            text-align: center;
-            background-color: #009879;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .btn-volver:hover {
-            background-color: #007f63;
-        }
-    </style>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Lista de Pedidos</h1>
-    <table id="tabla-pedidos">
-        <thead>
-            <tr>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Cédula</th>
-                <th>Celular</th>
-                <th>Carnet</th>
-                <th>Correo</th>
-                <th>Cantidad</th>
-                <th>Valor a pagar</th>
-                <th>Medio de pago</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Las filas se agregarán aquí -->
-        </tbody>
-    </table>
-
-    <a href="menu.html" class="btn-volver">Volver</a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
-            const tabla = document.getElementById('tabla-pedidos').getElementsByTagName('tbody')[0];
-
-            if (pedidos.length === 0) {
-                const mensaje = document.createElement('tr');
-                const celda = mensaje.insertCell();
-                celda.colSpan = 9;
-                celda.textContent = 'No hay pedidos registrados';
-                tabla.appendChild(mensaje);
-                return;
-            }
-
-            pedidos.forEach(pedido => {
-                const nuevaFila = tabla.insertRow();
-                Object.values(pedido).forEach(valor => {
-                    const nuevaCelda = nuevaFila.insertCell();
-                    nuevaCelda.textContent = valor;
-                });
-            });
-        });
-    </script>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+    <a class="navbar-brand" href="inicio.html">
+        <img alt="Dine Ease Logo" src="img/Dine_ease_logo-removebg-preview.png" />
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="anuncios.html">Anuncios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    </nav>
+</div>
+<h1>Lista de Pedidos</h1>
+<table id="tabla-pedidos">
+  <thead>
+      <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Cédula</th>
+          <th>Celular</th>
+          <th>Carnet</th>
+          <th>Correo</th>
+          <th>Cantidad</th>
+          <th>Valor a pagar</th>
+          <th>Medio de pago</th>
+          <th>Acciones</th>
+      </tr>
+  </thead>
+  <tbody>
+      <!-- Las filas se agregarán aquí -->
+  </tbody>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/JS/pedido.js"></script>
+<a href="menu.html" class="btn-volver">Volver</a>
 </body>
+
+<style>
+  body {
+      background-color: #f9f9f9;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+  .navbar {
+      background-color: #f8e8e8;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1800px;
+    }
+
+    .navbar-brand img {
+      height: 90px;
+      width: auto;
+      margin-right: 100px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #d97b6c;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+    color: #f77e53;
+    background-color: #f8e8e8;
+    box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
+    border-radius: 10px;
+  }
+
+  h1 {
+      padding-top: 30px;
+      text-align: center;
+      color: #333;
+  }
+
+  table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+      font-size: 0.9em;
+  }
+
+  th, td {
+      padding: 8px;
+      text-align: left;
+  }
+
+  thead {
+      background-color: #ff3c00;
+      color: #ffffff;
+  }
+
+  tbody tr:nth-child(even) {
+      background-color: #f3f3f3;
+  }
+
+  tbody tr:hover {
+      background-color: #f1f1f1;
+  }
+
+  th {
+      background-color: #f77e53;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+  }
+
+  td {
+      border-bottom: 1px solid #dddddd;
+  }
+
+  .btn-volver {
+      display: block;
+      width: 100px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #ff5e01;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+
+  .btn-volver:hover {
+      background-color: #d45f11;
+  }
+
+  .btn-eliminar {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+  }
+
+  .btn-eliminar:hover {
+      background-color: #ff1a1a;
+  }
+
+  .btn-eliminar:active {
+      background-color: #cc0000;
+  }
+</style>
 </html>
