@@ -45,3 +45,14 @@ function guardarDatos() {
     window.location.href = 'pedido.html';
   });
 }
+
+const productImage = localStorage.getItem('productImage');
+const productTitle = localStorage.getItem('productTitle');
+
+// Mostrar los datos en los elementos HTML
+if (productImage && productTitle) {
+    document.getElementById('productImage').src = productImage;
+    document.getElementById('productTitle').value = productTitle;
+}
+localStorage.removeItem('productImage');
+localStorage.removeItem('productTitle');
