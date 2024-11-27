@@ -6,8 +6,9 @@ function guardarDatos() {
   const carnet = document.getElementById('carnet').value;
   const correo = document.getElementById('correo').value;
   const cantidad = document.getElementById('cantidad').value;
-  const valor = document.getElementById('valor').value;
+  const valor = document.getElementById('productPrice').value;
   const medio = document.getElementById('medio').value;
+  const Plato = document.getElementById('productTitle').value;
 
   if (!Nombres || !apellidos || !cedula || !celular || !carnet || !correo || !cantidad || !valor || !medio) {
     Swal.fire({
@@ -20,6 +21,7 @@ function guardarDatos() {
   }
 
   const pedido = {
+      Plato,
       Nombres,
       apellidos,
       cedula,
@@ -34,7 +36,6 @@ function guardarDatos() {
   let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
   pedidos.push(pedido);
   localStorage.setItem('pedidos', JSON.stringify(pedidos));
-  // hola
 
   Swal.fire({
     icon: 'success',
@@ -48,11 +49,10 @@ function guardarDatos() {
 
 const productImage = localStorage.getItem('productImage');
 const productTitle = localStorage.getItem('productTitle');
+const productPrice = localStorage.getItem('productPrice');  
 
-// Mostrar los datos en los elementos HTML
 if (productImage && productTitle) {
     document.getElementById('productImage').src = productImage;
     document.getElementById('productTitle').value = productTitle;
+    document.getElementById('productPrice').value = productPrice;
 }
-localStorage.removeItem('productImage');
-localStorage.removeItem('productTitle');

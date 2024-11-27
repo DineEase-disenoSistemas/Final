@@ -33,6 +33,7 @@
 <table id="tabla-pedidos">
   <thead>
       <tr>
+          <th>Plato</th>
           <th>Nombres</th>
           <th>Apellidos</th>
           <th>Cédula</th>
@@ -46,130 +47,287 @@
       </tr>
   </thead>
   <tbody>
-      <!-- Las filas se agregarán aquí -->
   </tbody>
 </table>
+
+<!-- Modal -->
+<div id="modal-edicion" class="modal">
+  <div class="modal-content">
+    <h2>Editar Pedido</h2>
+    <form id="form-editar">
+      <label>Plato:</label>
+      <input type="text" id="editar-plato" required>
+      <label>Nombres:</label>
+      <input type="text" id="editar-nombres" required>
+      <label>Apellidos:</label>
+      <input type="text" id="editar-apellidos" required>
+      <label>Cédula:</label>
+      <input type="text" id="editar-cedula" required>
+      <label>Celular:</label>
+      <input type="text" id="editar-celular" required>
+      <label>Carnet:</label>
+      <input type="text" id="editar-carnet" required>
+      <label>Correo:</label>
+      <input type="email" id="editar-correo" required>
+      <label>Cantidad:</label>
+      <input type="number" id="editar-cantidad" required>
+      <label>Valor a pagar:</label>
+      <input type="number" id="editar-valor" required>
+      <label>Medio de pago:</label>
+      <input type="text" id="editar-medio" required>
+      <div class="modal-actions">
+        <button type="submit">Guardar Cambios</button>
+        <button type="button" id="cancelar-edicion">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/JS/pedido.js"></script>
 <a href="menu.html" class="btn-volver">Volver</a>
 </body>
 
 <style>
-  body {
-      background-color: #f9f9f9;
-      font-family: 'Roboto', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  background-color: #f9f9f9;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  .navbar {
-      background-color: #f8e8e8;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1800px;
-    }
+.navbar {
+  background-color: #f8e8e8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1800px;
+}
 
-    .navbar-brand img {
-      height: 90px;
-      width: auto;
-      margin-right: 100px;
-    }
+.navbar-brand img {
+  height: 90px;
+  width: auto;
+  margin-right: 100px;
+}
 
-    .navbar-nav .nav-link {
-      color: #d97b6c;
-      font-weight: 500;
-      margin: 0 10px;
-    }
+.navbar-nav .nav-link {
+  color: #d97b6c;
+  font-weight: 500;
+  margin: 0 10px;
+}
 
-    .navbar-nav .nav-link:hover {
-    color: #f77e53;
-    background-color: #f8e8e8;
-    box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
-    border-radius: 10px;
-  }
+.navbar-nav .nav-link:hover {
+color: #f77e53;
+background-color: #f8e8e8;
+box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
+border-radius: 10px;
+}
 
-  h1 {
-      padding-top: 30px;
-      text-align: center;
-      color: #333;
-  }
+h1 {
+  padding-top: 30px;
+  text-align: center;
+  color: #333;
+}
 
-  table {
-      width: 80%;
-      border-collapse: collapse;
-      margin: 20px auto;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-      font-size: 0.9em;
-  }
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+}
 
-  th, td {
-      padding: 8px;
-      text-align: left;
-  }
+th, td {
+  padding: 8px;
+  text-align: left;
+}
 
-  thead {
-      background-color: #ff3c00;
-      color: #ffffff;
-  }
+thead {
+  background-color: #ff3c00;
+  color: #ffffff;
+}
 
-  tbody tr:nth-child(even) {
-      background-color: #f3f3f3;
-  }
+tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
 
-  tbody tr:hover {
-      background-color: #f1f1f1;
-  }
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
 
-  th {
-      background-color: #f77e53;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-  }
+th {
+  background-color: #f77e53;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-  td {
-      border-bottom: 1px solid #dddddd;
-  }
+td {
+  border-bottom: 1px solid #dddddd;
+}
 
-  .btn-volver {
-      display: block;
-      width: 100px;
-      margin: 20px auto;
-      padding: 10px;
-      text-align: center;
-      background-color: #ff5e01;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-  }
+.btn-volver {
+  display: block;
+  width: 100px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #ff5e01;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-  .btn-volver:hover {
-      background-color: #d45f11;
-  }
+.btn-volver:hover {
+  background-color: #d45f11;
+}
 
-  .btn-eliminar {
-      background-color: #ff4d4d;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-size: 14px;
-  }
+.btn-eliminar {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-  .btn-eliminar:hover {
-      background-color: #ff1a1a;
-  }
+.btn-eliminar:hover {
+  background-color: #ff1a1a;
+}
 
-  .btn-eliminar:active {
-      background-color: #cc0000;
-  }
+.btn-eliminar:active {
+  background-color: #cc0000;
+}
+
+#modal-edicion {
+    display: none; 
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.836); 
+    padding-top: 50px; 
+    overflow-y: auto;
+}
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%; 
+    max-width: 800px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+#form-editar {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px;
+}
+
+
+#form-editar input, #form-editar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Botón de Guardar Cambios */
+.modal-actions button[type="submit"] {
+    background-color: #ff6224; 
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botón de Cancelar */
+.modal-actions button[type="button"] {
+    background-color: #f44336; 
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilos hover para los botones */
+.modal-actions button:hover[type="submit"] {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgb(190, 58, 5); 
+}
+
+.modal-actions button:hover[type="button"] {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgb(197, 9, 9); 
+}
+
+
+.modal-actions button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-actions button:active {
+    transform: translateY(2px); 
+}
+
+
+.btn-editar {
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: #45a049; 
+}
+
+.btn-editar:active {
+  background-color: #397d3a; 
+}
 </style>
 </html>

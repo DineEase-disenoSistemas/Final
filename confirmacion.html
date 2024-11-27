@@ -27,6 +27,11 @@
       </div>
     </div>
   </nav>
+  <div class="container mt-3">
+    <a href="menu.html" class="btn btn-light">
+      <i class="fas fa-arrow-left"></i> Volver
+    </a>
+  </div>
   <div class="content">
     <div class="description">
       <img id="productImage" />
@@ -60,10 +65,15 @@
           <input id="cantidad" class="form-control" placeholder="Cantidad" type="text" />
         </div>
         <div class="col-md-6">
-          <input id="valor" class="form-control" placeholder="Valor a pagar" type="text" />
+          <input id="productPrice" class="form-control" placeholder="Valor a pagar" type="text" readonly />
         </div>
         <div class="col-md-6">
-          <input id="medio" class="form-control" placeholder="Medio de pago" type="text" />
+          <select id="medio" class="form-control custom-select">
+            <option value="" disabled selected>Seleccione el medio de pago</option>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+          </select>
         </div>
       </div>
       <button class="btn-continue" onclick="guardarDatos()">
@@ -83,8 +93,33 @@
     padding: 0;
   }
 
+  .custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>') no-repeat right 0.75rem center/16px 16px;
+    padding-right: 2rem;
+  }
+
+  .btn-light {
+    background-color: #faf9f8;
+    border-color: #f8f9fa;
+    color: #ff3f05d7;
+  }
+
+  .btn-light:hover {
+    color: #f77e53;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 84, 53, 0.808);
+    border-radius: 10px;
+  }
+
+  .btn-light:focus {
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+  }
+
   .navbar {
-    background-color: #f8e8e8;
+    background-color: #ff765741;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -123,7 +158,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
-    padding-top: 200px;
+    padding-top: 120px;
     gap: 20px;
   }
 
