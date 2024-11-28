@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
             correo: document.getElementById('editar-correo').value,
             cantidad: document.getElementById('editar-cantidad').value,
             valor: document.getElementById('editar-valor').value,
-            medio: document.getElementById('editar-medio').value
+            medio: document.getElementById('editar-medio').value,
+            estado:"Finalizado"
         };
 
         pedidos[pedidoActualIndex] = pedidoEditado;
@@ -123,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento para guardar los cambios
     formEditar.addEventListener('submit', guardarCambios);
-    
     document.getElementById('cancelar-edicion').addEventListener('click', cerrarModal);
-
     actualizarTabla();
 });
