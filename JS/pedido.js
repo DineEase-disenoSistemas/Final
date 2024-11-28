@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const celdaAcciones = nuevaFila.insertCell();
 
-            // Botón de eliminar
+        
             const botonEliminar = document.createElement('button');
             botonEliminar.textContent = 'Eliminar';
             botonEliminar.className = 'btn-eliminar';
             botonEliminar.dataset.index = index;
             celdaAcciones.appendChild(botonEliminar);
 
-            // Botón de editar
+        
             const botonEditar = document.createElement('button');
             botonEditar.textContent = 'Editar';
             botonEditar.className = 'btn-editar';
