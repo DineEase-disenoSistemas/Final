@@ -124,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento para guardar los cambios
     formEditar.addEventListener('submit', guardarCambios);
-    
     document.getElementById('cancelar-edicion').addEventListener('click', cerrarModal);
-
     actualizarTabla();
 });

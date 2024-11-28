@@ -51,7 +51,7 @@ function guardarDatos() {
 
 const productImage = localStorage.getItem('productImage');
 const productTitle = localStorage.getItem('productTitle');
-const productPrice = localStorage.getItem('productPrice');  
+const productPrice = localStorage.getItem('productPrice'); 
 
 if (productImage && productTitle) {
     document.getElementById('productImage').src = productImage;
