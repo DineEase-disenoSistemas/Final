@@ -96,12 +96,36 @@ z-index: -1;
 }
 
 .btn-menu {
-  background-color: #ff7f50;
+  background: linear-gradient(90deg, #ffac97, #fcceab);
   color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 20px;
   border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-menu:hover {
+  background: linear-gradient(90deg, #fcceab, #ffac97);
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-menu:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 16px;
 }
 </style>
 </head>
@@ -251,11 +275,11 @@ z-index: -1;
     </div>
 </div>
 <div class="text-center mt-4">
-    <a href="menu.html">
-        <button class="btn-menu">
-            VER MENÚ
-        </button>
-    </a>
+<a href="menu.html">
+  <button class="btn-menu">
+      VER MENÚ
+  </button>
+</a>
 </div>
 </div>
 </body>
