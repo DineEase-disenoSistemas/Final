@@ -33,6 +33,23 @@ body::before {
     z-index: -1;
 }
 
+.btn-light {
+  background-color: #faf9f800;
+  border-color: #f8f9fa;
+  color: #ffffffd7;
+}
+
+.btn-light:hover {
+  color: #f77e53;
+  background-color: #ffffff;
+  box-shadow: 0 1px 8px rgba(255, 84, 53, 0.808);
+  border-radius: 5px;
+}
+
+.btn-light:focus {
+  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+
 .navbar {
     background-color: #fcdfd7;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -138,7 +155,11 @@ body::before {
   </nav>
 
 <div class="container">
-  <a href="inicio.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+  <div class="container mt-3">
+    <a href="inicio.html" class="btn btn-light">
+      <i class="fas fa-arrow-left"></i> Volver
+    </a>
+  </div>
   <div class="row">
       <div class="col-md-2">
           <div class="card">
