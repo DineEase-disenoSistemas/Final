@@ -152,7 +152,7 @@
 <script>
     // const productImage = localStorage.getItem('productImage');
     const productTitle = localStorage.getItem('productTitle');
-    const productPrice = localStorage.getItem('productPrice');
+    const productPrice = localStorage.getItem('productPrice');   
     const medioPago = localStorage.getItem('medio');
     const estado = localStorage.getItem('estado');
 
@@ -161,10 +161,8 @@
         document.getElementById('productTitle').value = productTitle;
         document.getElementById('total').value = productPrice;
         document.getElementById('status').value = estado;
-        // document.getElementById('payment').value = medioPago;
-        if (medioPago) {
-        document.getElementById('payment').value = medioPago; // Asignar el medio de pago al campo input
-    }
+        document.getElementById('payment').value = medioPago;
+    
     }
 
 </script>
