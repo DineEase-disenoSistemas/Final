@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('editar-correo').value = pedido.correo;
         document.getElementById('editar-cantidad').value = pedido.cantidad;
         document.getElementById('editar-valor').value = pedido.valor;
+        document.getElementById('editar-total').value = pedido.total;
         document.getElementById('editar-medio').value = pedido.medio;
 
         modalEdicion.style.display = 'flex';
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             correo: document.getElementById('editar-correo').value,
             cantidad: document.getElementById('editar-cantidad').value,
             valor: document.getElementById('editar-valor').value,
+            total: document.getElementById('editar-total').value,
             medio: document.getElementById('editar-medio').value,
             estado:"Finalizado"
         };

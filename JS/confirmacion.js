@@ -1,17 +1,19 @@
 function guardarDatos() {
+
   const Nombres = document.getElementById('Nombres').value;
   const apellidos = document.getElementById('apellidos').value;
   const cedula = document.getElementById('cedula').value;
   const celular = document.getElementById('celular').value;
   const carnet = document.getElementById('carnet').value;
   const correo = document.getElementById('correo').value;
-  const cantidad = document.getElementById('cantidad').value;
-  const valor = document.getElementById('productPrice').value;
+  const cantidad = (document.getElementById('cantidad').value);
+  const valor = (document.getElementById('productPrice').value);
+  const total = cantidad * valor +".000";
   const medio = document.getElementById('medio').value;
   const Plato = document.getElementById('productTitle').value;
   const estado="Pendiente"
 
-  if (!Nombres || !apellidos || !cedula || !celular || !carnet || !correo || !cantidad || !valor || !medio) {
+  if (!Nombres || !apellidos || !cedula || !celular || !carnet || !correo || !cantidad || !medio) {
     Swal.fire({
       icon: 'error',
       title: 'Campos Vacíos',
@@ -31,6 +33,7 @@ function guardarDatos() {
       correo,
       cantidad,
       valor,
+      total,
       medio,
       estado
   };

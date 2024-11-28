@@ -33,16 +33,39 @@ z-index: -1;
 }
 
 .navbar {
-  background-color: #f8e8e8;
-}
+    background-color: #fcdfd7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-.navbar-brand img {
-  height: 80px;
-}
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+  }
 
-.navbar-nav .nav-link {
-  color: #d2691e;
-}
+  .navbar-brand img {
+    height: 90px;
+    width: auto;
+    margin-right: 100px;
+  }
+
+  .navbar-nav .nav-link {
+    color: #d97b6c;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #f77e53;
+    background-color: #f8e8e8;
+    box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
+    border-radius: 10px;
+  }
+
 
 .card {
   margin: 20px;
@@ -85,28 +108,25 @@ z-index: -1;
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
-<div class="container">
-    <a class="navbar-brand" href="inicio.html">
-        <img alt="Dine Ease Logo" height="50" src="img/Dine_ease_logo-removebg-preview.png"
-            width="100" />
-    </a>
-    <div class="collapse navbar-collapse">
+    <div class="container">
+      <a class="navbar-brand" href="inicio.html">
+        <img alt="Dine Ease Logo" src="img/Dine_ease_logo-removebg-preview.png" />
+      </a>
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="anuncios.html">Anuncios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="perfil.html">
-                    <i class="fas fa-user"></i>
-                </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="anuncios.html">Anuncios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
+          </li>
         </ul>
+      </div>
     </div>
-</div>
-</nav>
+  </nav>
 <div class="container">
 <div class="row">
     <div class="col-md-3">

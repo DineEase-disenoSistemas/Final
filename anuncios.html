@@ -13,7 +13,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 
 <style>
-  body {
+body {
   background-image: url('img/fotos_campusprado06-1024x614.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,14 +24,31 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
   margin: 0;
   height: 500vh;
   overflow: hidden;
+}
+
+.btn-light {
+    background-color: #faf9f800;
+    border-color: #f8f9fa;
+    color: #ffffffd7;
   }
 
-  img{
-    width: 100%;
-    height: 100%;
+  .btn-light:hover {
+    color: #f77e53;
+    background-color: #ffffff;
+    box-shadow: 0 1px 8px rgba(255, 84, 53, 0.808);
+    border-radius: 5px;
   }
 
-  body::before {
+  .btn-light:focus {
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+  }
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+body::before {
   content: '';
   position: absolute;
   top: 0;
@@ -40,77 +57,98 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
-  }
+}
 
-  .navbar {
-  background-color: #f8e8e6;
-  }
+.navbar {
+  background-color: #fcdfd7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .navbar-brand img {
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1800px;
+}
+
+.navbar-brand img {
   height: 90px;
-  }
+  width: auto;
+  margin-right: 100px;
+}
 
-  .navbar-nav .nav-link {
+.navbar-nav .nav-link {
   color: #d97b6c;
-  font-weight: bold;
-  }
+  font-weight: 500;
+  margin: 0 10px;
+}
 
-  .navbar-nav .nav-link:hover {
-  color: #d97b6c;
-  }
+.navbar-nav .nav-link:hover {
+  color: #f77e53;
+  background-color: #f8e8e8;
+  box-shadow: 0 4px 8px rgba(255, 44, 44, 0.692);
+  border-radius: 10px;
+}
 
-  .carousel-item img {
+.carousel-item img {
   height: 200px;
   object-fit: cover;
-  }
+}
 
-  .card {
+.card {
   margin: 10px;
-  }
+}
 
-  .card-title {
+.card-title {
   font-size: 1.2rem;
   font-weight: bold;
-  }
+}
 
-  .btn-custom {
+.btn-custom {
   background-color: #d97b6c;
   color: white;
-  }
+}
 
-  .btn-custom:hover {
+.btn-custom:hover {
   background-color: #c96a5b;
-  }
+}
 </style>
 
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light">
-<div class="container">
-<a class="navbar-brand" href="inicio.html">
-    <img alt="Dine Ease Logo" src="img/Dine_ease_logo-removebg-preview.png" />
-</a>
-<div class="collapse navbar-collapse">
-    <ul class="navbar-nav ms-auto">
+  <div class="container">
+    <a class="navbar-brand" href="inicio.html">
+      <img alt="Dine Ease Logo" src="img/Dine_ease_logo-removebg-preview.png" />
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-            <a class="nav-link" href="anuncios.html">Anuncios</a>
+          <a class="nav-link" href="anuncios.html">Anuncios</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
+          <a class="nav-link" href="reservaEnCurso.html">Reservas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
+          <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
         </li>
-    </ul>
-</div>
-</div>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 <!-- Main Content -->
 <div class="container mt-4">
-<a class="text-danger" href="#">
-<i class="fas fa-arrow-left"></i> Volver</a>
+  <div class="container mt-3">
+    <a href="menu.html" class="btn btn-light">
+      <i class="fas fa-arrow-left"></i> Volver
+    </a>
+  </div>
+
 <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleControls">
 <div class="carousel-inner">
     <div class="carousel-item active">
