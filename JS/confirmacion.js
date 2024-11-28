@@ -9,6 +9,7 @@ function guardarDatos() {
   const valor = document.getElementById('productPrice').value;
   const medio = document.getElementById('medio').value;
   const Plato = document.getElementById('productTitle').value;
+  const estado="Pendiente"
 
   if (!Nombres || !apellidos || !cedula || !celular || !carnet || !correo || !cantidad || !valor || !medio) {
     Swal.fire({
@@ -30,7 +31,8 @@ function guardarDatos() {
       correo,
       cantidad,
       valor,
-      medio
+      medio,
+      estado
   };
 
   let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
@@ -43,7 +45,7 @@ function guardarDatos() {
     text: 'Los datos se han guardado correctamente.',
     confirmButtonText: 'Aceptar'
   }).then(() => {
-    window.location.href = 'pedido.html';
+    window.location.href = 'reservaEnCurso.html';
   });
 }
 
