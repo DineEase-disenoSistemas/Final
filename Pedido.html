@@ -332,6 +332,132 @@ td {
 .btn-editar:active {
   background-color: #397d3a; 
 }
+
+@media (min-width: 1000px) and (max-width: 1800px) {
+  table {
+    width: 95%;
+    font-size: 0.8em;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #form-editar {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-volver {
+    width: 80px;
+    padding: 8px;
+  }
+
+  .btn-eliminar {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1800px) {
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    height: 95%;
+    max-width: 800px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #form-editar {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px;
+}
+
+#form-editar input, #form-editar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+    .modal-actions button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+}
+
+@media (max-width: 768px) {
+  #modal-edicion {
+    display: none; 
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.836); 
+    padding-top: 50px; 
+    overflow-y: auto;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #form-editar {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-actions button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .modal-actions button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
 </style>
+
 <script></script>
 </html>
