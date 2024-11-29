@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const celdaAcciones = nuevaFila.insertCell();
 
-        
+
             const botonEliminar = document.createElement('button');
             botonEliminar.textContent = 'Eliminar';
             botonEliminar.className = 'btn-eliminar';
             botonEliminar.dataset.index = index;
             celdaAcciones.appendChild(botonEliminar);
 
-        
+
             const botonEditar = document.createElement('button');
             botonEditar.textContent = 'Editar';
             botonEditar.className = 'btn-editar';
@@ -78,11 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('editar-total').value = pedido.total;
         document.getElementById('editar-medio').value = pedido.medio;
 
+        const cantidadInput = document.getElementById('editar-cantidad');
+        const valorInput = document.getElementById('editar-valor');
+        const totalInput = document.getElementById('editar-total');
+
+        cantidadInput.addEventListener('input', () => {
+            const cantidad = parseInt(cantidadInput.value) || 0;
+            const valor = parseFloat(valorInput.value) || 0;
+            const total = cantidad * valor;
+            totalInput.value = total.toFixed(3); // Formato ajustado
+        });
         modalEdicion.style.display = 'flex';
     };
 
     const guardarCambios = (event) => {
         event.preventDefault();
+        const cantidad = parseInt(document.getElementById('editar-cantidad').value) || 0;
+        const valor = parseFloat(document.getElementById('editar-valor').value) || 0;
+        const total = cantidad * valor;
 
         const pedidoEditado = {
             Plato: document.getElementById('editar-plato').value,
@@ -92,16 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
             celular: document.getElementById('editar-celular').value,
             carnet: document.getElementById('editar-carnet').value,
             correo: document.getElementById('editar-correo').value,
-            cantidad: document.getElementById('editar-cantidad').value,
-            valor: document.getElementById('editar-valor').value,
-            total: document.getElementById('editar-total').value,
+            cantidad: cantidad,
+            valor: valor.toFixed(3),
+            total: total.toFixed(3),
             medio: document.getElementById('editar-medio').value,
-            estado:"Finalizado"
+            estado: "Finalizado"
         };
-
+        // localStorage.setItem('estado', estado);
         pedidos[pedidoActualIndex] = pedidoEditado;
         localStorage.setItem('pedidos', JSON.stringify(pedidos));
-
+        localStorage.setItem('estado', "Finalizado");
+        localStorage.setItem('total', pedidoEditado.total);
+        localStorage.setItem('medio', pedidoEditado.medio);
         actualizarTabla();
         modalEdicion.style.display = 'none';
 

@@ -38,6 +38,10 @@ function guardarDatos() {
       estado
   };
 
+  localStorage.setItem('total', total);
+  localStorage.setItem('medio', medio);
+  localStorage.setItem('estado', estado);
+  
   let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
   pedidos.push(pedido);
   localStorage.setItem('pedidos', JSON.stringify(pedidos));
