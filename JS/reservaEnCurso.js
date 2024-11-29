@@ -5,7 +5,6 @@ const estado = localStorage.getItem('estado');
 
 print(medio)
 if (productTitle) {
-    // document.getElementById('productImage').src = productImage;
     document.getElementById('productTitle').value = productTitle;
     document.getElementById('total').value = total;
     document.getElementById('status').value = estado;
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Eliminar el último pedido de la lista
-                pedidos.pop(); // Si deseas eliminar un pedido específico, usa `splice(index, 1)`
+                pedidos.pop(); 
 
                 // Guardar los cambios en localStorage
                 localStorage.setItem('pedidos', JSON.stringify(pedidos));
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     confirmButtonText: 'Aceptar'
                 }).then(() => {
                     // Redirigir a otra página si es necesario
-                    window.location.href = 'menu.html'; // Cambia 'menu.html' por la URL correcta
+                    window.location.href = 'menu.html';
                 });
             }
         });
@@ -64,17 +63,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Asignar evento click al botón "Cancelar reserva"
     botonCancelar.addEventListener('click', cancelarReserva);
 });
-
-
-
-
-// if (productImage && productTitle) {
-//   document.getElementById('productImage').src = productImage;
-//   document.getElementById('productTitle').value = productTitle;
-//   document.getElementById('productPrice').value = productPrice;
-
-//   // Asignar valores a los campos 'total', 'status' y 'payment'
-//   if (total) document.getElementById('total').value = total;
-//   if (estado) document.getElementById('status').value = estado;
-//   if (medio) document.getElementById('payment').value = medio;
-// }

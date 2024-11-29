@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cantidad = parseInt(cantidadInput.value) || 0;
             const valor = parseFloat(valorInput.value) || 0;
             const total = cantidad * valor;
-            totalInput.value = total.toFixed(3); // Formato ajustado
+            totalInput.value = total.toFixed(3);
         });
         modalEdicion.style.display = 'flex';
     };
